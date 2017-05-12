@@ -101,12 +101,13 @@
                 var gridQuery = "?";
 
                 if (self.gridFilterForm) {
-                    gridQuery += self.gridFilterForm.serialize();
+                    gridQuery += self.gridFilterForm.serialize().Replace("?","");
                 } else if (search) {
-                    gridQuery = search;
+                    gridQuery = search.replace("?","");
                 }
 
                 gridQuery = URI(gridQuery);
+
 
                 var myColFilters = URI.parseQuery(search);
                 if (myColFilters['grid-filter']) {
@@ -119,7 +120,12 @@
                     gridQuery.addSearch("grid-dir", mySort["grid-dir"]);
                 }
 
-                var gridUrl = URI(griLoaddAction).addQuery(gridQuery.search().replace("?", ""));
+                var uriTest = URI(griLoaddAction);
+                var hostname = uriTest.hostname();
+
+                var gridUrl = URI(hostname + "/" + griLoaddAction).addQuery(gridQuery.search().replace("?", ""));
+
+                //var gridUrl = URI(griLoaddAction).addQuery(gridQuery.search().replace("?", ""));
 
                 if (renderRowsOnly) {
                     gridUrl.addQuery(renderRowsOnly);
