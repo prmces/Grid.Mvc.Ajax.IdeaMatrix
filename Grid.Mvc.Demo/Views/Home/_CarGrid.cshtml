@@ -1,0 +1,12 @@
+﻿@using GridMvc.Html
+@using GridMvc.Sorting
+@model Grid.Mvc.Ajax.GridExtensions.AjaxGrid<Grid.Mvc.Demo.Models.GridDataRow>
+
+
+@Html.Grid(Model,"_Grid").Named("carsGrid").Columns(columns =>
+    {
+        columns.Add(car => car.CarMake).Titled("Make").SetWidth(100).Encoded(false).Sanitized(false).Sortable(true).SortInitialDirection(GridSortDirection.Ascending);
+        columns.Add(car => car.CarModel).Titled("Model").SetWidth(100).Encoded(false).Sanitized(false).Sortable(true);
+        columns.Add(car => car.Year).Titled("Year").SetWidth(100).Encoded(false).Sanitized(false).Sortable(true);
+        columns.Add(car => car.Condition).Titled("Condition").SetWidth(100).Encoded(false).Sanitized(false).Sortable(true);
+    }).WithPaging(3).Filterable().WithMultipleFilters()

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Grid.Mvc.AjaxDemo</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/bootstrap.min.css")
+        @Styles.Render("~/Content/font-awesome.min.css")
+        @RenderSection("styles", required: false)
+    </head>
+    <body>
+        <div id="body">
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Grid.Mvc.Ajax</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/siteJs.js")
+        @Scripts.Render("~/Bundles/b.js");
+        @RenderSection("scripts", required: false)
+        @RenderSection("featured", required: false)
+    </body>
+</html>

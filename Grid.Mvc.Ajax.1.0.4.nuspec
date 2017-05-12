@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Grid.Mvc.Ajax</id>
+        <version>1.0.4</version>
+        <title>Grid.Mvc.Ajax</title>
+        <authors>Eric Vogel</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Extends the Grid.Mvc helper with AJAX paging, sorting, and column and form filtering.</description>
+        <summary>Extends the Grid.Mvc helper with AJAX paging, sorting, and column and form filtering.</summary>
+        <language>en-US</language>
+        <dependencies>
+            <dependency id="Grid.Mvc" version="3.0.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="content\Content\ladda-bootstrap\ladda-themeless.min.css" target="content\Content\ladda-bootstrap\ladda-themeless.min.css" />
+        <file src="content\Scripts\ladda-bootstrap\ladda.min.js" target="content\Scripts\ladda-bootstrap\ladda.min.js" />
+        <file src="content\Scripts\ladda-bootstrap\spin.min.js" target="content\Scripts\ladda-bootstrap\spin.min.js" />
+        <file src="content\Scripts\gridmvc-ext.js" target="content\Scripts\gridmvc-ext.js" />
+        <file src="content\Views\Shared\_AjaxGridPager.cshtml" target="content\Views\Shared\_AjaxGridPager.cshtml" />
+        <file src="content\Grid.Mvc.Ajax.readme" target="content\Grid.Mvc.Ajax.readme" />
+        <file src="lib\Grid.Mvc.Ajax.dll" target="lib\Grid.Mvc.Ajax.dll" />
+    </files>
+</package>

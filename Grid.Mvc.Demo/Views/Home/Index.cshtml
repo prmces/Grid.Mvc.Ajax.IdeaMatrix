@@ -1,0 +1,49 @@
+﻿@model Grid.Mvc.Demo.Models.GridData
+@{
+    ViewBag.Title = "Grid.Mvc.Ajax Demo Page";
+}
+
+@section styles
+{
+    @Styles.Render("~/Content/Gridmvc.css")
+}
+
+@{
+    Html.RenderPartial("_CarGrid", Model.Grid);
+}
+
+@{
+    Html.RenderPartial("_Grid2", Model.Grid2);
+}
+
+@using (Html.BeginForm(null, null, null, FormMethod.Post, new {  id = "gridFilterForm", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.GridFilter.Year)
+        @Html.TextBoxFor(model => model.GridFilter.Year)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.GridFilter.CarMake)
+        @Html.TextBoxFor(model => model.GridFilter.CarMake)
+    </div>
+    <input type='submit' id="filterGrid" />
+}
+
+@{
+    Html.RenderPartial("_FilteredGrid", Model.FilterableGrid);
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/gridDemo.js")
+
+    <script type="text/javascript">
+        GridMvcAjax.demo.init(
+       {
+           updateGridAction: '@Url.Action("Grid")',
+           grid2Action: '@Url.Action("Grid2")',
+           filterGridAction: '@Url.Action("FilterGrid")',
+           preFilterFormAction: '@Url.Action("PreFilterForm")'
+       });
+    </script>
+}
