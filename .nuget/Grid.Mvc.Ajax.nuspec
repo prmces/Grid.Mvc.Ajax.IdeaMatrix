@@ -11,6 +11,10 @@
         <summary>Extends the Grid.Mvc helper with AJAX paging, sorting, and column and form filtering.</summary>
         <releaseNotes>Fixed Ajax Calls</releaseNotes>
         <language>en-US</language>
+        <licenseUrl>https://github.com/prmces/Grid.Mvc.Ajax.IdeaMatrix/license</licenseUrl>
+        <projectUrl>https://github.com/prmces/Grid.Mvc.Ajax.IdeaMatrix</projectUrl>
+        <iconUrl>http://www.codeplex.com/Download?ProjectName=gridmvc&amp;DownloadId=386651</iconUrl>
+		
         <dependencies>
             <dependency id="Grid.Mvc.Redux.IdeaMatrix" version="1.0.0" />
         </dependencies>
