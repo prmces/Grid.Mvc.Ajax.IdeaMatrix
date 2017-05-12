@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Grid.Mvc.Ajax.IdeaMatrix</id>
+        <version>1.0.0</version>
+        <title>Grid.Mvc.Ajax.IdeaMatrix</title>
+        <authors>prmces</authors>
+        <owners>prmces</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Extends the Grid.Mvc helper with AJAX paging, sorting, and column and form filtering.</description>
+        <summary>Extends the Grid.Mvc helper with AJAX paging, sorting, and column and form filtering.</summary>
+        <releaseNotes>Fixed Ajax Calls</releaseNotes>
+        <language>en-US</language>
+        <dependencies>
+            <dependency id="Grid.Mvc.Redux.IdeaMatrix" version="1.0.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\Grid.Mvc.Ajax\Content\ladda-bootstrap\ladda-themeless.min.css" target="content\Content\ladda-bootstrap\ladda-themeless.min.css" />
+        <file src="..\Grid.Mvc.Ajax\Content\font-awesome.css" target="content\Content\font-awesome.css" />
+        <file src="..\Grid.Mvc.Ajax\Content\font-awesome.min.css" target="content\Content\font-awesome.min.css" />
+        <file src="..\Grid.Mvc.Ajax\Scripts\ladda-bootstrap\ladda.min.js" target="content\Scripts\ladda-bootstrap\ladda.min.js" />
+        <file src="..\Grid.Mvc.Ajax\Scripts\ladda-bootstrap\spin.min.js" target="content\Scripts\ladda-bootstrap\spin.min.js" />
+        <file src="..\Grid.Mvc.Ajax\Scripts\gridmvc-ext.js" target="content\Scripts\gridmvc-ext.js" />
+        <file src="..\Grid.Mvc.Ajax\Scripts\URI.js" target="content\Scripts\URI.js" />
+        <file src="..\Grid.Mvc.Ajax\Views\Shared\_AjaxGridPager.cshtml" target="content\Views\Shared\_AjaxGridPager.cshtml" />
+        <file src="..\Grid.Mvc.Ajax\Grid.Mvc.Ajax.readme" target="content\Grid.Mvc.Ajax.readme" />
+        <file src="..\Grid.Mvc.Ajax\bin\Release\Grid.Mvc.Ajax.dll" target="lib\net40" />
+    </files>
+</package>
