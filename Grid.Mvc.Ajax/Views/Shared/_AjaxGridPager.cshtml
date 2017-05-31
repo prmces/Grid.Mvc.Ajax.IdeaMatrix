@@ -11,12 +11,12 @@
             @{if (Model.Pages > Model.PagePartitionSize + 2 &&
                   Model.PagePartitionSize > 0)
             {
-                <li class="active"><a class="grid-page-link" data-page="1">1</a></li>
+                <li class="@(1 == Model.CurrentPage ? "active" : "")"><a class="grid-page-link" data-page="1">1</a></li>
                 <li><a href="#" class="grid-pageSetLink prev" style="display: none;" data-pageset='1' data-partitionsize="@Model.PagePartitionSize">...</a></li>
                 for (int i = 1; i < Model.PagePartitionSize + 1; i++)
                 {
                     var currentPage = i + 1;
-                    <li><a href="#" class="grid-page-link" data-page='@currentPage'>@currentPage</a></li>
+                    <li class="@(currentPage == Model.CurrentPage ? "active" : "")"><a href="#" class="grid-page-link" data-page='@currentPage'>@currentPage</a></li>
                 }
 
                 <li><a href="#" class="grid-pageSetLink next" data-pageset='2' data-partitionsize="@Model.PagePartitionSize">...</a></li>
@@ -24,11 +24,11 @@
             }
             else
             {
-                <li class="active"><a class="grid-page-link" data-page="1">1</a></li>
+                <li class="@(1 == Model.CurrentPage ? "active" : "")"><a class="grid-page-link" data-page="1">1</a></li>
                 for (int i = 1; i < Model.Pages; i++)
                 {
                     var currentPage = i + 1;
-                    <li><a href="#" class="grid-page-link" data-page='@currentPage'>@currentPage</a></li>
+                    <li class="@(currentPage == Model.CurrentPage ? "active" : "")"><a href="#" class="grid-page-link" data-page='@currentPage'>@currentPage</a></li>
                 }
             }
             }
