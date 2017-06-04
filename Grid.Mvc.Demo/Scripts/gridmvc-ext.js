@@ -61,15 +61,15 @@
             self.currentPage = 1;
 
             if (self.gridFilterForm) {
-                var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
-                var l = Ladda.create(formButton);
-                l.start();
+                //var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
+                //var l = Ladda.create(formButton);
+                //l.start();
             }
 
             self.updateGrid(fullSearch, function () {
-                if (l) {
-                    l.stop();
-                }
+                //if (l) {
+                //    l.stop();
+                // }
             });
         },
         ajaxify: function (options) {
@@ -134,9 +134,9 @@
                 var gridUrl = self.getGridUrl(self.loadDataAction, search, renderRowsOnly);
 
                 if (self.gridFilterForm) {
-                    var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
-                    var l = Ladda.create(formButton);
-                    l.start();
+                    //var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
+                    //var l = Ladda.create(formButton);
+                    //l.start();
                 }
 
                 $.ajax({
@@ -159,9 +159,9 @@
                         callback(response);
                     }
 
-                    if (l) {
-                        l.stop();
-                    }
+                    //if (l) {
+                    //    l.stop();
+                    //}
                 });
             };
 
@@ -172,9 +172,9 @@
                     self.currentPage = 1;
 
                     if (self.gridFilterForm) {
-                        var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
-                        var l = Ladda.create(formButton);
-                        l.start();
+                        //var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
+                        //var l = Ladda.create(formButton);
+                        //l.start();
                     }
 
                     // remove grid sort arrows
@@ -186,9 +186,9 @@
                     self.gridSort = mySearch.substr(mySearch.match(/grid-column=\w+/).index);
 
                     self.updateGrid(mySearch, function () {
-                        if (l) {
-                            l.stop();
-                        }
+                        //if (l) {
+                        //    l.stop();
+                        //}
                     });
 
                     // update link to sort in opposite direction
@@ -208,11 +208,11 @@
 
             var filterSuccess = function () {
                 self.currentPage = 1;
-                var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
-                var l = Ladda.create(formButton);
-                l.start();
+                //var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
+                //var l = Ladda.create(formButton);
+                //l.start();
                 self.updateGrid(location.search, function () {
-                    l.stop();
+                    //l.stop();
                 });
             };
 
@@ -390,9 +390,9 @@
                 self.lastPageNum = parseInt(self.jqContainer.find(".grid-page-link:last").attr('data-page'));
 
                 if (self.gridFilterForm) {
-                    var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
-                    var l = Ladda.create(formButton);
-                    l.start();
+                    //var formButton = $("#" + self.gridFilterForm.attr('id') + " input[type=submit],button[type=submit]")[0];
+                    //var l = Ladda.create(formButton);
+                    //l.start();
                 }
 
                 var gridQuery = self.getGridUrl(self.loadPagedDataAction, self.gridColumnFilters, null);
@@ -415,9 +415,9 @@
                             prevPageLink.show();
                         }
 
-                        if (l) {
-                            l.stop();
-                        }
+                        //if (l) {
+                        //    l.stop();
+                        //}
 
                         self.notifyOnGridLoaded(response, $.Event("GridLoaded"));
                     })
