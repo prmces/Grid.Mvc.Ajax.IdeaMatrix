@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Grid.Mvc.Ajax.IdeaMatrix</id>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <title>Grid.Mvc.Ajax.IdeaMatrix</title>
         <authors>prmces</authors>
         <owners>prmces</owners>
@@ -16,15 +16,12 @@
         <iconUrl>http://www.codeplex.com/Download?ProjectName=gridmvc&amp;DownloadId=386651</iconUrl>
 		
         <dependencies>
-            <dependency id="Grid.Mvc.Redux.IdeaMatrix" version="1.0.0" />
+            <dependency id="Grid.Mvc.Redux.IdeaMatrix" version="1.0.1" />
+			<dependency id="FontAwesome" version="4.7.0" />
+			
         </dependencies>
     </metadata>
     <files>
-        <file src="..\Grid.Mvc.Ajax\Content\ladda-bootstrap\ladda-themeless.min.css" target="content\Content\ladda-bootstrap\ladda-themeless.min.css" />
-        <file src="..\Grid.Mvc.Ajax\Content\font-awesome.css" target="content\Content\font-awesome.css" />
-        <file src="..\Grid.Mvc.Ajax\Content\font-awesome.min.css" target="content\Content\font-awesome.min.css" />
-        <file src="..\Grid.Mvc.Ajax\Scripts\ladda-bootstrap\ladda.min.js" target="content\Scripts\ladda-bootstrap\ladda.min.js" />
-        <file src="..\Grid.Mvc.Ajax\Scripts\ladda-bootstrap\spin.min.js" target="content\Scripts\ladda-bootstrap\spin.min.js" />
         <file src="..\Grid.Mvc.Ajax\Scripts\gridmvc-ext.js" target="content\Scripts\gridmvc-ext.js" />
         <file src="..\Grid.Mvc.Ajax\Scripts\URI.js" target="content\Scripts\URI.js" />
         <file src="..\Grid.Mvc.Ajax\Views\Shared\_AjaxGridPager.cshtml" target="content\Views\Shared\_AjaxGridPager.cshtml" />
