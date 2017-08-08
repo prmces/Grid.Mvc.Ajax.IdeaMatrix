@@ -517,7 +517,7 @@ NumberFilterWidget = (function ($) {
 
     numberFilterWidget.prototype.onShow = function () {
         var textBox = this.container.find(".grid-filter-input");
-        if (textBox.length <= 0) return; 
+        if (textBox.length <= 0) return;
         textBox.focus();
     };
 
@@ -642,25 +642,22 @@ DateTimeFilterWidget = (function ($) {
         //if window.jQueryUi included:
         if (this.datePickerIncluded) {
             var datePickerOptions = this.data || {};
-            datePickerOptions.format = datePickerOptions.format || "yyyy-mm-dd";
+            datePickerOptions.format = datePickerOptions.format || "yy-mm-dd";
             datePickerOptions.language = datePickerOptions.language || this.lang.code;
 
             var $context = this;
             var dateContainer = this.container.find(".grid-filter-datepicker");
-            dateContainer.datepicker(datePickerOptions).on('changeDate', function (ev) {
-                var type = $context.container.find(".grid-filter-type").val();
-                //if (type == "1") {
-                //    var tomorrow = new Date(ev.getTime());
-                //    tomorrow.setDate(ev.getDate() + 1);
-                //    var filterValues = [{ filterType: type, filterValue: ev.format() }];
-                //}
-                //else{
-                    var filterValues = [{ filterType: type, filterValue: ev.format() }];
-                //}
-                $context.cb(filterValues);
+            dateContainer.datepicker({
+                changeMonth: !0, changeYear: !0,dateFormat: "yy-mm-dd",
+                onSelect: function (dateText, inst)
+                {
+                    var type = $context.container.find(".grid-filter-type").val();
+                    var filterValues = [{ filterType: type, filterValue: dateText }];
+                    $context.cb(filterValues);
+                }
             });
             if (this.value.filterValue)
-                dateContainer.datepicker('update', this.value.filterValue);
+                dateContainer.datepicker('setDate', this.value.filterValue);
         }
     };
 
@@ -713,7 +710,7 @@ BooleanFilterWidget = (function ($) {
         this.container.append(html);
     };
 
-    booleanFilterWidget.prototype.registerEvents = function () { 
+    booleanFilterWidget.prototype.registerEvents = function () {
         var $context = this;
         var applyBtn = this.container.find(".grid-filter-choose");
         applyBtn.click(function () {
